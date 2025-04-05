@@ -124,7 +124,7 @@ events.on('basket:update', () => {
             price: item.price,
             index: index + 1,
         } as BasketProduct);
-    });
+    }); 
 });
 
     // Обновляем счетчик
@@ -147,7 +147,7 @@ events.on('product:deleteFromBasket', (item: IProduct) => {
 });
     
     //Открываем корзину
-events.on('basket:open', () => {
+events.on('basket:open', () => { 
     modal.render({
         content: basket.render(),
         });

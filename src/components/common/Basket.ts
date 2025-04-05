@@ -29,17 +29,13 @@ export class Basket extends Component<IBasketView> {
     set list(items: HTMLElement[]) {
         if (items.length) {
             this._list.replaceChildren(...items);
-            this._button.disabled = false; // Разблокируем кнопку, если есть элементы
+            this._button.disabled = false; // Разблокируем кнопку, если есть элементы 
         } else {
             this._list.replaceChildren(createElement<HTMLParagraphElement>('p', {
                 textContent: 'Корзина пуста'
             }));
-            this._button.disabled = true; // Блокируем кнопку, если корзина пуста
+            this._button.disabled = true; // Блокируем кнопку, если корзина пуста 
         }
-    }
-
-    set selected(items: string[]) {
-        this.setDisabled(this._button, items.length === 0);
     }
 
     set total(total: number) {
